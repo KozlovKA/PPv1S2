@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Students>
+    <Client>
+        <Name>Maxim Latysh</Name>
+        <AccountNumber>821703</AccountNumber>
+        <Missings>
+            <Address>2</Address>
+            <MobilePhoneNumber>100</MobilePhoneNumber>
+            <PhoneNumber>0</PhoneNumber>
+        </Missings>
+    </Client>
+    <Client>
+        <Name>Markovets Viktor</Name>
+        <AccountNumber>821703</AccountNumber>
+        <Missings>
+            <Address>2</Address>
+            <MobilePhoneNumber>1000</MobilePhoneNumber>
+            <PhoneNumber>5</PhoneNumber>
+        </Missings>
+    </Client>
+    <Client>
+        <Name>Snejko Vladimir</Name>
+        <AccountNumber>821701</AccountNumber>
+        <Missings>
+            <Address>0</Address>
+            <MobilePhoneNumber>1</MobilePhoneNumber>
+            <PhoneNumber>2</PhoneNumber>
+        </Missings>
+    </Client>
+    <Client>
+        <Name>Andrey Petrov</Name>
+        <AccountNumber>123123</AccountNumber>
+        <Missings>
+            <Address>0</Address>
+            <MobilePhoneNumber>4</MobilePhoneNumber>
+            <PhoneNumber>100</PhoneNumber>
+        </Missings>
+    </Client>
+
+</Students>
