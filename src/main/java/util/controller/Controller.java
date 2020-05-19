@@ -11,6 +11,11 @@ import java.util.List;
 
 public class Controller {
     private List<Client> clients;
+    private List<String> clientsName;
+    private List<String> clientsAccountNumber;
+    private List<String> clientsAddress;
+    private List<Integer> clientsMobilePhoneNumber;
+    private List<Integer> clientsPhoneNumber;
     private Loader loader;
     private Saver saver;
     private Text numOfClientText;
@@ -32,9 +37,28 @@ public class Controller {
         saver.save(this.clients, filePath);
     }
 
+
+    public List<String> getAllAccountNumber(){
+      return clientsName;
+    }
+    public List<String> getAllAddress(){
+        return clientsAddress;
+    }
+    public List<String> getAllNames(){
+        return clientsName;
+    }
+    public List<Integer> getAllPhoneNumber(){
+        return clientsPhoneNumber;
+    }
+    public List<Integer> getAllMobilePhoneNumber(){
+        return clientsMobilePhoneNumber;
+    }
+
+
     public List<Client> getAllClients() {
         return clients;
     }
+
 
     public void addClient(String name, String accNum, String adress, int mobilePhoneNumber, int phoneNumber) {
         Client client = new Client();
