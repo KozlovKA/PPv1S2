@@ -23,7 +23,6 @@ public class ClientTable extends Composite {
 
     public ClientTable(Composite parent, int style, Controller controller) {
         super(parent, style);
-
         RowLayout rowLayout = new RowLayout(SWT.HORIZONTAL);
         rowLayout.marginTop = 10;
         rowLayout.marginBottom = 10;
@@ -161,7 +160,7 @@ public class ClientTable extends Composite {
     }
 
     public void updateTable() {
-        List<Client> clients = getClientPage(pageNum, numOfClientsOnPage, controller.getAllClients());
+        List<Client> clients = controller.getClientPage(pageNum, numOfClientsOnPage, controller.getAllClients());
         fillTheTable(clients);
         pagesIndicatorLabel.setText((pageNum + 1) + "/" + (int) Math.ceil((double) controller.getAllClients().size() / numOfClientsOnPage));
         table.pack();
@@ -172,39 +171,12 @@ public class ClientTable extends Composite {
 
     public void updateTable(List<Client> clientsList) {
         searchClientList = clientsList;
-        List<Client> clients = getClientPage(pageNum, numOfClientsOnPage, clientsList);
+        List<Client> clients = controller.getClientPage(pageNum, numOfClientsOnPage, clientsList);
         fillTheTable(clients);
         pagesIndicatorLabel.setText((pageNum + 1) + "/" + (int) Math.ceil((double) searchClientList.size() / numOfClientsOnPage));
         table.pack();
         this.pack();
         //super.pack();
     }
-
-    private List<Client> getClientPage(int index, int numOfClientsOnPage, List<Client> clients) {
-        List<List<Client>> pages = calculatePages(numOfClientsOnPage, clients);
-        if (!pages.isEmpty()) {
-            return pages.get(index);
-        } else {
-            List<Client> page = new ArrayList<Client>();
-            return page;
-        }
-    }
-
-    private List<List<Client>> calculatePages(int numOfClientsOnPage, List<Client> clients) {
-        List<List<Client>> pages = new ArrayList<List<Client>>();
-        int numOfPages = (int) Math.ceil((double) clients.size() / numOfClientsOnPage);
-
-        for (int j = 0; j < numOfPages; j++) {
-            List<Client> clientPage = new ArrayList<Client>();
-            for (int i = numOfClientsOnPage * j; i < numOfClientsOnPage * j + numOfClientsOnPage; i++) {
-                try {
-                    clientPage.add(clients.get(i));
-                } catch (Exception e) {
-                    e.getStackTrace();
-                }
-            }
-            pages.add(clientPage);
-        }
-        return pages;
-    }
 }
+
