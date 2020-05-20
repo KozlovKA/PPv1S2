@@ -98,8 +98,20 @@ public class SearchListener implements Listener {
                 }
 
                 if (AccountNumberSearchButton.getSelection()) {
-                    String ill = AccountNumberText.getText();
-                    clients.addAll(controller.findByNumber(ill, controller.getAllClients()));
+                    String accountNumber = AccountNumberText.getText();
+                    clients.addAll(controller.findByNumber(accountNumber, controller.getAllClients()));
+                }
+                if (addressButton.getSelection()) {
+                    String address = addressText.getText();
+                    clients.addAll(controller.findByAddress(address, controller.getAllClients()));
+                }
+                if (mobilePhoneButton.getSelection()) {
+                    int mobilePhone = Integer.parseInt(mobilePhoneText.getText());
+                    clients.addAll(controller.findByMobilePhone(mobilePhone, controller.getAllClients()));
+                }
+                if (phoneButton.getSelection()) {
+                    int phone = Integer.parseInt(phoneText.getText());
+                    clients.addAll(controller.findByPhone(phone, controller.getAllClients()));
                 }
 
                 table.updateTable(clients);

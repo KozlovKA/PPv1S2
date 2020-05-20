@@ -73,15 +73,15 @@ public class AddListener implements Listener {
 
                 String stName = clientNameText.getText();
                 String accountNumber = accountNumbText.getText();
-                String adress = address.getText();
-                int bad = Integer.parseInt(mobilePhoneText.getText());
-                int another = Integer.parseInt(phoneText.getText());
+                String clientAddress = addressText.getText();
+                int mobilePhone = Integer.parseInt(mobilePhoneText.getText());
+                int phone = Integer.parseInt(phoneText.getText());
 
                 controller.addClient(stName,
                         accountNumber,
-                        adress,
-                        bad,
-                        another);
+                        clientAddress,
+                        mobilePhone,
+                        phone);
                 window.updateTable();
                 child.dispose();
             }

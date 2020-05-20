@@ -47,7 +47,7 @@ public class DeleteListener implements Listener {
         nameSearchCheck.setText("Delete by name");
 
         Label accountNumbLabel = new Label(child, SWT.NONE);
-        accountNumbLabel.setText("Adress:");
+        accountNumbLabel.setText("Account number:");
 
         Text accountNumbText = new Text(child, SWT.NONE);
         accountNumbText.setLayoutData(new RowData(200, 20));
@@ -56,13 +56,13 @@ public class DeleteListener implements Listener {
         accountNumberCheck.setText("Delete by account number");
 
         Label adressLabel = new Label(child, SWT.NONE);
-        adressLabel.setText("Client adress:");
+        adressLabel.setText("Client address:");
 
         Text adressText = new Text(child, SWT.NONE);
         adressText.setLayoutData(new RowData(200, 20));
 
         Button adressCheck = new Button(child, SWT.CHECK);
-        adressCheck.setText("Delete by adress");
+        adressCheck.setText("Delete by address");
 
         Label mobilePhoneLabel = new Label(child, SWT.NONE);
         mobilePhoneLabel.setText("Mobile phone number:");
@@ -91,23 +91,23 @@ public class DeleteListener implements Listener {
 
                 List<Client> clients = new ArrayList<>();
                 if (accountNumberCheck.getSelection()) {
-                    String group = accountNumbText.getText();
-                    clients.addAll(controller.findByNumber(group, controller.getAllClients()));
+                    String accountNum = accountNumbText.getText();
+                    clients.addAll(controller.findByNumber(accountNum, controller.getAllClients()));
                 }
 
                 if (adressCheck.getSelection()) {
-                    String ill = adressText.getText();
-                    clients.addAll(controller.findByAdress(ill, controller.getAllClients()));
+                    String address = adressText.getText();
+                    clients.addAll(controller.findByAddress(address, controller.getAllClients()));
 
                 }
                 if (phoneCheck.getSelection()) {
-                    int ill = Integer.parseInt(phoneCheck.getText());
-                    clients.addAll(controller.findByPhone(ill, controller.getAllClients()));
+                    int phone = Integer.parseInt(phoneCheck.getText());
+                    clients.addAll(controller.findByPhone(phone, controller.getAllClients()));
 
                 }
                 if (mobilePhoneCheck.getSelection()) {
-                    int ill = Integer.parseInt(mobilePhoneText.getText());
-                    clients.addAll(controller.findByMobilePhone(ill, controller.getAllClients()));
+                    int mobilePhone = Integer.parseInt(mobilePhoneText.getText());
+                    clients.addAll(controller.findByMobilePhone(mobilePhone, controller.getAllClients()));
 
                 }
                 if (nameSearchCheck.getSelection()) {

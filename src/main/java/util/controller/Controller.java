@@ -98,10 +98,10 @@ public class Controller {
         return clients;
     }
 
-    public List<Client> findByAdress(String adress, List<Client> clientList) {
+    public List<Client> findByAddress(String address, List<Client> clientList) {
         List<Client> clients = new ArrayList<Client>();
         for (Client client : clientList) {
-            if (client.getAddress() == adress) {
+            if (client.getAddress() == address) {
                 clients.add(client);
             }
         }
